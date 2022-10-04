@@ -7,15 +7,21 @@
     function send1() {
       document.getElementById( "login" ).submit()
     }
+
+    function signup() {
+      location.href='signup/'
+    }
   </script>
 </head>
 <body>
   <div class="login-form">
     <form id='login' method="POST">
       {% csrf_token %}
+      <h1>login page</h1>
       <input type="text" name="userid" class="text-field" placeholder="ID">
       <input type="password" name="password" class="text-field" placeholder="Password">
       <input type="submit" value="Login" class="submit-btn" onclick="send1();">
+      <input type="button" value="signup" onclick="signup()">
     </form>
   </div>
 </body>

@@ -189,6 +189,30 @@ LOCK TABLES `auth_user_user_permissions` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ctfdata`
+--
+
+DROP TABLE IF EXISTS `ctfdata`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ctfdata` (
+  `answer` varchar(100) NOT NULL,
+  `score` int DEFAULT NULL,
+  PRIMARY KEY (`answer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ctfdata`
+--
+
+LOCK TABLES `ctfdata` WRITE;
+/*!40000 ALTER TABLE `ctfdata` DISABLE KEYS */;
+INSERT INTO `ctfdata` VALUES ('flag{ctf_flag}',100);
+/*!40000 ALTER TABLE `ctfdata` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `django_admin_log`
 --
 
@@ -296,7 +320,33 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
+INSERT INTO `django_session` VALUES ('s8bg8ycih7h1wlf5i2p0uxhcljxtohxh','eyJpZCI6InRlc3QifQ:1ofcXn:r1lcQ4uOsK-pD0mMSjExDJ0o0E3WeS4WYy5cn-3YLsQ','2022-10-18 07:40:47.242236');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbluser`
+--
+
+DROP TABLE IF EXISTS `tbluser`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbluser` (
+  `id` varchar(10) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `score` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbluser`
+--
+
+LOCK TABLES `tbluser` WRITE;
+/*!40000 ALTER TABLE `tbluser` DISABLE KEYS */;
+INSERT INTO `tbluser` VALUES ('abc','1234',0),('test','test',100);
+/*!40000 ALTER TABLE `tbluser` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -332,4 +382,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-28 17:40:54
+-- Dump completed on 2022-10-04 16:45:24

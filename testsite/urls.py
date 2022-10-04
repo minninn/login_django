@@ -21,4 +21,5 @@ urlpatterns = [
     path( '', include( 'testapp.urls' ) ),
     path( 'signup/', include( 'testapp.urls' ) ),
     path( 'logout/', include( 'testapp.urls' ) ),
+    path( 'ctf/', include( 'testapp.urls' ) ),
 ]

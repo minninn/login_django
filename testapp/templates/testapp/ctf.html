@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTF</title>
+    <script>
+        function submit_click() {
+            document.getElementById("ctfinput").submit()
+        }
+
+        function mainpage() {
+            location.href='logout/'
+        }
+    </script>
+</head>
+<body>
+    <form id="ctfinput" method="POST">
+        {% csrf_token %}
+        <input type="text" name="answer" placeholder="flag{___}">
+        <input type="submit" name="submit" Value="submit" onclick="submit_click()">
+        <input type="button" Value="logout" onclick="mainpage()">
+        <br><br>
+        {{ username }}
+        {{ score }}
+    </form>
+</body>
+</html>

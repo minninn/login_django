@@ -10,12 +10,17 @@
                 alert('logout')
                 location.href='logout/'
             }
+
+            function ctf() {
+                location.href='ctf/'
+            }
         </script>
     </head>
     <body>
             <h3>{{ message }}</h3>
         {% if request.session.id %}
             <input type="button" value='logout' onclick=logout()>
+            <input type="button" value="ctf" onclick="ctf()">
         {% else %}
             <input type="button" value="login" onclick=login()>
         {% endif %}

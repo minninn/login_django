@@ -8,15 +8,20 @@
       document.getElementById( "data" ).submit()
     }
 
+    function login() {
+      location.href='/'
+    }
   </script>
 </head>
 <body>
   <div class="login-form">
     <form id='data' method="POST">
       {% csrf_token %}
+      <h1>signup page</h1>
       <input type="text" name="userid" class="text-field" placeholder="ID">
       <input type="password" name="password" class="text-field" placeholder="Password">
       <input type="submit" value="Signup" class="submit-btn" onclick="send();">
+      <input type="button" value="login" onclick="login()">
     </form>
   </div>
 </body>
