@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>회원가입</title>
+  <title>SIGNUP</title>
   <meta charset="utf-8">
   <script>
     function send() {
-      alert('회원가입')
       document.getElementById( "data" ).submit()
     }
 
@@ -15,9 +14,9 @@
   <div class="login-form">
     <form id='data' method="POST">
       {% csrf_token %}
-      <input type="text" name="userid" class="text-field" placeholder="아이디">
-      <input type="password" name="password" class="text-field" placeholder="비밀번호">
-      <input type="submit" value="회원가입" class="submit-btn" onclick="send();">
+      <input type="text" name="userid" class="text-field" placeholder="ID">
+      <input type="password" name="password" class="text-field" placeholder="Password">
+      <input type="submit" value="Signup" class="submit-btn" onclick="send();">
     </form>
   </div>
 </body>

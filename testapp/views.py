@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import pymysql
 
 def login( request ):
-    message = ''
     if request.method == 'POST':
         id = request.POST.get( 'userid' )
         pw = request.POST.get( 'password' )
@@ -20,7 +19,6 @@ def login( request ):
         cur2.execute( 'SELECT password FROM testtable' )
         idList = [ item[0] for item in cur1.fetchall() ]
         pwList = [ item[0] for item in cur2.fetchall() ]
-        print( idList, pwList )
         userLoginData = {}
 
         for key, value in zip( idList, pwList ):
@@ -33,20 +31,26 @@ def login( request ):
         cur1.close()
         cur2.close()
 
-        if userLoginData[id] == pw:
-            message = { 'message':'로그인성공' }
+        if id in userLoginData and userLoginData[id] == pw:
+            message = { 'message':'Success' }
+            request.session['id'] = id
             print( 'success' )
+            return render( request, 'testapp/message.html', message )
+            
         else:
-            message = ''
+            message = { 'message':'Failure' }
             print( 'failure' )
-    if message == '':
-        return render( request, 'testapp/login.html' )
-    else:
-        return render( request, 'testapp/message.html', message )
+            return render( request, 'testapp/message.html', message )
+            
+    return render( request, 'testapp/login.html' )
+        
+def logout( request ):
+    request.session.flush()
+    return redirect( '/' )
 
 
 def signup( request ):
-    
+
     if request.method == 'POST':
         id = request.POST.get( 'userid' )
         pw = request.POST.get( 'password' )  

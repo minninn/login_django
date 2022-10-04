@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <script>
+            function login() {
+                location.href='/'
+            }
+            
+            function logout() {
+                alert('logout')
+                location.href='logout/'
+            }
+        </script>
+    </head>
     <body>
-        {{ message }}
+            <h3>{{ message }}</h3>
+        {% if request.session.id %}
+            <input type="button" value='logout' onclick=logout()>
+        {% else %}
+            <input type="button" value="login" onclick=login()>
+        {% endif %}
+        
     </body>
 </html>
