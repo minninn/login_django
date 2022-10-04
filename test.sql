@@ -208,7 +208,7 @@ CREATE TABLE `ctfdata` (
 
 LOCK TABLES `ctfdata` WRITE;
 /*!40000 ALTER TABLE `ctfdata` DISABLE KEYS */;
-INSERT INTO `ctfdata` VALUES ('flag{ctf_flag}',100);
+INSERT INTO `ctfdata` VALUES ('flag{ctf_flag}',100),('flag{test_flag}',200);
 /*!40000 ALTER TABLE `ctfdata` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,7 +320,6 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('s8bg8ycih7h1wlf5i2p0uxhcljxtohxh','eyJpZCI6InRlc3QifQ:1ofcXn:r1lcQ4uOsK-pD0mMSjExDJ0o0E3WeS4WYy5cn-3YLsQ','2022-10-18 07:40:47.242236');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -382,4 +381,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-04 16:45:24
+-- Dump completed on 2022-10-04 16:48:05
