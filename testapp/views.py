@@ -46,9 +46,7 @@ def login( request ):
 
         for key, value in zip( idList, pwList ):
             userLoginData[key] = value
-        
-
-        print( userLoginData )
+    
 
         conn.close()
         cur1.close()
@@ -58,12 +56,10 @@ def login( request ):
             message = { 'message':'Success' }
             request.session['id'] = id
             user = id
-            print( 'success' )
             return render( request, 'testapp/message.html', message )
             
         else:
             message = { 'message':'Failure' }
-            print( 'failure' )
             return render( request, 'testapp/message.html', message )
             
     return render( request, 'testapp/login.html' )
@@ -109,7 +105,6 @@ def ctf( request ):
     curScore.execute( "SELECT score FROM tbluser WHERE id = '{0}'".format( user ) )
     score = int( curScore.fetchone()[0] )
     curScore.close()
-    print( ctfdict )
 
     if request.method == 'POST':
         answer = request.POST.get( 'answer' )
