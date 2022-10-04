@@ -98,6 +98,7 @@ def signup( request ):
 
 def ctf( request ):
     global answerList
+    global ctfdict
     conn = pymysql.connect(
                 host = "localhost",
                 user = "root",
@@ -108,6 +109,7 @@ def ctf( request ):
     curScore.execute( "SELECT score FROM tbluser WHERE id = '{0}'".format( user ) )
     score = int( curScore.fetchone()[0] )
     curScore.close()
+    print( ctfdict )
 
     if request.method == 'POST':
         answer = request.POST.get( 'answer' )

@@ -208,7 +208,7 @@ CREATE TABLE `ctfdata` (
 
 LOCK TABLES `ctfdata` WRITE;
 /*!40000 ALTER TABLE `ctfdata` DISABLE KEYS */;
-INSERT INTO `ctfdata` VALUES ('flag{ctf_flag}',100),('flag{test_flag}',200);
+INSERT INTO `ctfdata` VALUES ('flag{q2}',160),('flag{q3}',50),('flag{test}',140);
 /*!40000 ALTER TABLE `ctfdata` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -320,6 +320,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
+INSERT INTO `django_session` VALUES ('0t8p8cdhnd8rfgmwe0jnv4dcanmcd9py','eyJpZCI6ImFiYyJ9:1ofcwE:RjcPBvQfIfIl-9RKFdogQCgGTcGSIwk6Ii-7sCRr1p0','2022-10-18 08:06:02.812723');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,7 +345,7 @@ CREATE TABLE `tbluser` (
 
 LOCK TABLES `tbluser` WRITE;
 /*!40000 ALTER TABLE `tbluser` DISABLE KEYS */;
-INSERT INTO `tbluser` VALUES ('abc','1234',0),('test','test',100);
+INSERT INTO `tbluser` VALUES ('abc','1234',350),('skcjswo','1234',300),('test','test',100);
 /*!40000 ALTER TABLE `tbluser` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,4 +382,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-04 16:48:05
+-- Dump completed on 2022-10-04 17:07:28
