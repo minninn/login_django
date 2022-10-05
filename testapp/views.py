@@ -140,15 +140,38 @@ def mypage( request ):
             )
 
     curScore = conn.cursor()
+    
+    if request.method == 'POST':
+        message = request.POST.get('onclick')
+        if message == 'score':
+            curScore.execute( "UPDATE tbluser SET score = '0' WHERE id = '{0}'".format( user ) )
+            conn.commit()
+
     curScore.execute( "SELECT score FROM tbluser WHERE id = '{0}'".format( user ) )
-    score = curScore.fetchone()[0]
     conn.commit()
+    score = curScore.fetchone()[0]
+    data = { 'id':user, 'score':score }
+
     curScore.close()
     conn.close()
 
-    data = { 'id':user, 'score':score }
-
     return render( request, 'testapp/mypage.html', data )
+
+def resign( request ):
+    conn = pymysql.connect(
+                host = "localhost",
+                user = "root",
+                password = "12341234",
+                db = "test"
+            )
+
+    cur = conn.cursor()
+    cur.execute( "DELETE FROM tbluser WHERE id = '{0}'".format( user ) )
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return redirect( '/' )
 
 
 # Create your views here.

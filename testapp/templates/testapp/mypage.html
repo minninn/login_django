@@ -3,7 +3,15 @@
     <head>
         <script>
             function ctfpage() {
-                location.href='http://127.0.0.1:8000/ctf'
+                location.href='/ctf'
+            }
+
+            function initscore() {
+                document.getElementById("initscore").submit()
+            }
+
+            function deluser() {
+                location.href='/resign'
             }
         </script>
     </head>
@@ -11,5 +19,12 @@
         <h1>user: {{ id }}</h1>
         <h1>score: {{ score }}</h1>
         <input type="button" Value="ctfpage" onclick="ctfpage()">
+        <form id="data" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="onclick" value="score">
+            <input type="button" Value="initscore" onclick="initscore()">
+            <input type="button" Value="resign" onclick="deluser()"> 
+        </form>
+        
     </body>
 </html>

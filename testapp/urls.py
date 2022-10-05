@@ -7,4 +7,5 @@ urlpatterns = [
     path( 'logout/', views.logout ),
     path( 'ctf/', views.ctf ),
     path( 'mypage/', views.mypage ),
+    path( 'resign/', views.resign ),
 ]
