@@ -10,6 +10,10 @@
         function mainpage() {
             location.href='logout/'
         }
+
+        function mypage() {
+            location.href='http://127.0.0.1:8000/mypage/'
+        }
     </script>
 </head>
 <body>
@@ -22,5 +26,6 @@
         {{ username }}
         {{ score }}
     </form>
+    <input type="button" Value="mypage" onclick="mypage()">
 </body>
 </html>

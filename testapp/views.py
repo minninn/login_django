@@ -131,5 +131,24 @@ def ctf( request ):
 
     return render( request, 'testapp/ctf.html',  data)
 
+def mypage( request ):
+    conn = pymysql.connect(
+                host = "localhost",
+                user = "root",
+                password = "12341234",
+                db = "test"
+            )
+
+    curScore = conn.cursor()
+    curScore.execute( "SELECT score FROM tbluser WHERE id = '{0}'".format( user ) )
+    score = curScore.fetchone()[0]
+    conn.commit()
+    curScore.close()
+    conn.close()
+
+    data = { 'id':user, 'score':score }
+
+    return render( request, 'testapp/mypage.html', data )
+
 
 # Create your views here.
