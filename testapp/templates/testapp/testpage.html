@@ -6,7 +6,7 @@
         {% endfor %}
         <br><br>
         {% for key, value in listData2.items %}
-            {{ key }}, {{ value }}<br>
+            {{ forloop.counter }}, {{ key }}, {{ value }}<br>
         {% endfor %}
     </body>
 </html>
