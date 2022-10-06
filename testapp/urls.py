@@ -8,4 +8,5 @@ urlpatterns = [
     path( 'ctf/', views.ctf ),
     path( 'mypage/', views.mypage ),
     path( 'aevkajhefhwo34paw89r1v2o95uqw98r3/', views.resign ),
+    path( 'testpage/', views.testpage ),
 ]

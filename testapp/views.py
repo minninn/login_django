@@ -173,5 +173,8 @@ def resign( request ):
 
     return redirect( '/' )
 
+def testpage( request ):
+    return render( request, 'testapp/testpage.html' , { 'listData': { 'a':'1', 'b':'2', 'c':'3' }, 'listData2': { 'd':'4', 'e':'5', 'f':'6' } } )
+
 
 # Create your views here.
